@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 280" fill="none" width="100%" height="100%">
+  <!-- Pest Stop Inc. Official Logo (Vector Redesign matching original brand asset) -->
+  <defs>
+    <!-- Beetle Symbol -->
+    <g id="beetle">
+      <!-- Antennae -->
+      <path d="M-6 -10 C-10 -15 -14 -16 -18 -14 M6 -10 C10 -15 14 -16 18 -14" stroke="#1E293B" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <!-- Legs -->
+      <path d="M-8 -4 C-16 -8 -20 -3 -22 -1 M8 -4 C16 -8 20 -3 22 -1" stroke="#1E293B" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <path d="M-10 2 C-18 2 -22 6 -24 10 M10 2 C18 2 22 6 24 10" stroke="#1E293B" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <path d="M-8 8 C-16 12 -20 18 -22 22 M8 8 C16 12 20 18 22 22" stroke="#1E293B" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <!-- Head -->
+      <ellipse cx="0" cy="-8" rx="4.5" ry="4" fill="#0F172A"/>
+      <!-- Thorax -->
+      <ellipse cx="0" cy="-2" rx="7" ry="5" fill="#1E293B"/>
+      <!-- Abdomen / Elytra -->
+      <ellipse cx="0" cy="9" rx="8.5" ry="11" fill="#0F172A"/>
+      <!-- Center seam -->
+      <line x1="0" y1="4" x2="0" y2="19" stroke="#E2E8F0" stroke-width="1.2"/>
+    </g>
+  </defs>
+
+  <!-- Beetles crawling along the arch over STOP sign -->
+  <g opacity="0.85">
+    <use href="#beetle" transform="translate(42, 95) rotate(-15) scale(0.9)"/>
+    <use href="#beetle" transform="translate(125, 95) rotate(-10) scale(0.9)"/>
+    <use href="#beetle" transform="translate(208, 90) rotate(20) scale(0.9)"/>
+    <use href="#beetle" transform="translate(285, 45) rotate(45) scale(0.85)"/>
+    <use href="#beetle" transform="translate(378, 28) rotate(70) scale(0.85)"/>
+    <use href="#beetle" transform="translate(485, 48) rotate(115) scale(0.85)"/>
+    <use href="#beetle" transform="translate(545, 100) rotate(135) scale(0.7)"/>
+  </g>
+
+  <!-- PEST Text -->
+  <text x="12" y="180" font-family="'Arial Black', 'Impact', sans-serif" font-weight="900" font-size="82" fill="#DE1B26" letter-spacing="-1">PEST</text>
+  <!-- Underline under PEST -->
+  <rect x="14" y="200" width="225" height="5" fill="#1E293B" rx="1"/>
+
+  <!-- Center STOP Sign Octagon -->
+  <g transform="translate(370, 150)">
+    <!-- Outer Red Octagon -->
+    <!-- 8 points: (R*cos(angle), R*sin(angle)) for angles 22.5, 67.5, 112.5, 157.5, 202.5, 247.5, 292.5, 337.5 -->
+    <polygon points="
+      38,-92  92,-38  92,38  38,92
+      -38,92  -92,38  -92,-38  -38,-92" 
+      fill="#DE1B26" stroke="#DE1B26" stroke-width="4" stroke-linejoin="round"/>
+    
+    <!-- White Inner Border -->
+    <polygon points="
+      35,-85  85,-35  85,35  35,85
+      -35,85  -85,35  -85,-35  -35,-85" 
+      fill="#DE1B26" stroke="#FFFFFF" stroke-width="4.5" stroke-linejoin="round"/>
+
+    <!-- STOP Text -->
+    <text x="0" y="24" font-family="'Arial Black', 'Impact', sans-serif" font-weight="900" font-size="64" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">STOP</text>
+  </g>
+
+  <!-- INC. Text -->
+  <text x="480" y="180" font-family="'Arial Black', 'Impact', sans-serif" font-weight="900" font-size="64" fill="#DE1B26" letter-spacing="-0.5">INC.</text>
+  <!-- Underline under INC. -->
+  <rect x="482" y="200" width="130" height="5" fill="#1E293B" rx="1"/>
+</svg>
