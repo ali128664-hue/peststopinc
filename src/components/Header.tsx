@@ -16,43 +16,45 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-white shadow-sm">
-      {/* Top Emergency Announcement Bar */}
-      <div className="bg-brand-navy text-white text-xs py-2 px-4 border-b border-brand-navy-light/40">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-          <div className="flex items-center gap-4 flex-wrap">
-            <div className="inline-flex items-center gap-1.5 text-red-300 font-semibold">
-              <span className="w-2 h-2 rounded-full bg-brand-red animate-ping" />
-              <Flame className="w-3.5 h-3.5 text-brand-red" />
-              <span>SAME-DAY EMERGENCY DISPATCH IN MILTON</span>
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all">
+      {/* Top Emergency & Friendly Announcement Bar */}
+      <div className="bg-brand-navy text-white text-xs py-2 px-4 border-b border-slate-800/60">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
+          <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
+            <div className="inline-flex items-center gap-1.5 font-semibold text-emerald-300">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="tracking-wide">MILTON DISPATCH ACTIVE</span>
             </div>
-            <span className="hidden sm:inline text-slate-400">|</span>
+            <span className="hidden sm:inline text-slate-500">•</span>
             <div className="hidden sm:inline-flex items-center gap-1 text-slate-300">
-              <Clock className="w-3.5 h-3.5 text-slate-400" />
-              <span>Mon–Sun: 7:00 AM – 10:00 PM</span>
+              <Clock className="w-3.5 h-3.5 text-amber-400" />
+              <span>Open 7 Days: 7:00 AM – 10:00 PM</span>
             </div>
-            <span className="hidden md:inline text-slate-400">|</span>
+            <span className="hidden md:inline text-slate-500">•</span>
             <div className="hidden md:inline-flex items-center gap-1 text-slate-300">
               <MapPin className="w-3.5 h-3.5 text-brand-red" />
               <span>#565, Milton, ON L9T 8L8</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
-            <span className="hidden lg:inline text-slate-300 font-medium">Need Immediate Help?</span>
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <span className="hidden lg:inline text-slate-300 text-[11px] font-medium">Need fast, friendly help?</span>
             <a
               href={businessConfig.phone.telLink}
-              className="inline-flex items-center gap-1.5 font-bold text-white bg-brand-red hover:bg-brand-red-dark px-3 py-1 rounded-md transition-colors text-xs shadow-sm"
+              className="inline-flex items-center gap-1.5 font-bold text-white bg-brand-red hover:bg-brand-red-dark px-3 py-1 rounded-full transition-all text-xs shadow-sm hover:scale-105 active:scale-95"
             >
-              <Phone className="w-3.5 h-3.5" />
-              <span>Call {businessConfig.phone.formatted}</span>
+              <Phone className="w-3 h-3" />
+              <span>(437) 922-7700</span>
             </a>
           </div>
         </div>
       </div>
 
       {/* Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <Link href="/" className="inline-flex items-center gap-2 group shrink-0">
           <div className="relative w-48 sm:w-56 h-12">
@@ -148,18 +150,25 @@ export default function Header() {
 
         {/* Right CTAs */}
         <div className="hidden sm:flex items-center gap-3">
-          <div className="text-right hidden xl:block">
-            <span className="block text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Milton Dispatch</span>
-            <a href={businessConfig.phone.telLink} className="text-sm font-bold text-slate-900 hover:text-brand-red">
+          <a
+            href={businessConfig.phone.telLink}
+            className="text-right hidden xl:block group px-3 py-1.5 rounded-xl hover:bg-slate-50 transition-colors"
+          >
+            <span className="block text-[10px] text-slate-500 font-semibold uppercase tracking-wider flex items-center gap-1 justify-end">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
+              Fast Local Response
+            </span>
+            <span className="text-sm font-black text-slate-900 group-hover:text-brand-red transition-colors">
               {businessConfig.phone.formatted}
-            </a>
-          </div>
+            </span>
+          </a>
           <button
             type="button"
             onClick={openQuoteModal}
-            className="px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-white font-bold rounded-xl text-xs sm:text-sm shadow-md hover:shadow-lg transition-all"
+            className="px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-white font-bold rounded-full text-xs sm:text-sm shadow-md hover:shadow-glow-red hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center gap-1.5 group"
           >
-            Get Free Quote
+            <span>Get Free Quote</span>
+            <span className="text-amber-200 group-hover:rotate-12 transition-transform">✨</span>
           </button>
         </div>
 

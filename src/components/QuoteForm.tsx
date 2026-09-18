@@ -184,36 +184,52 @@ export default function QuoteForm({
           />
         </div>
 
-        <div className="flex items-center gap-2 p-3 bg-red-50 rounded-lg border border-red-200">
-          <input
-            type="checkbox"
-            id="urgent-check"
-            checked={formData.urgent}
-            onChange={(e) => setFormData({ ...formData, urgent: e.target.checked })}
-            className="w-4 h-4 text-brand-red rounded border-slate-300 focus:ring-brand-red"
-          />
-          <label htmlFor="urgent-check" className="text-xs font-medium text-brand-red cursor-pointer">
-            <span className="font-bold">Urgent / Emergency:</span> I need same-day emergency inspection/treatment.
-          </label>
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 p-3 bg-emerald-50 rounded-xl border border-emerald-200/80">
+            <input
+              type="checkbox"
+              id="pet-safe-check"
+              defaultChecked
+              className="w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500"
+            />
+            <label htmlFor="pet-safe-check" className="text-xs font-semibold text-emerald-900 cursor-pointer flex items-center gap-1.5">
+              <span>🐾</span>
+              <span>We have pets or children (use gentle pet/child-safe protocol)</span>
+            </label>
+          </div>
+
+          <div className="flex items-center gap-2 p-3 bg-red-50/80 rounded-xl border border-red-200">
+            <input
+              type="checkbox"
+              id="urgent-check"
+              checked={formData.urgent}
+              onChange={(e) => setFormData({ ...formData, urgent: e.target.checked })}
+              className="w-4 h-4 text-brand-red rounded border-slate-300 focus:ring-brand-red"
+            />
+            <label htmlFor="urgent-check" className="text-xs font-semibold text-brand-red cursor-pointer flex items-center gap-1.5">
+              <span>⚡</span>
+              <span><strong>Same-Day Priority:</strong> I need emergency dispatch today</span>
+            </label>
+          </div>
         </div>
 
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-3 px-6 bg-brand-red hover:bg-brand-red-dark text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 text-base disabled:opacity-50"
+          className="w-full py-3.5 px-6 bg-brand-red hover:bg-brand-red-dark text-white font-black rounded-full shadow-md hover:shadow-glow-red hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 text-base disabled:opacity-50 group"
         >
           {isSubmitting ? (
-            <span>Transmitting Request...</span>
+            <span>Transmitting Your Request...</span>
           ) : (
             <>
-              <span>Get My Free Quote</span>
-              <Send className="w-4 h-4" />
+              <span>Get My Free Friendly Estimate</span>
+              <span className="text-amber-200 group-hover:rotate-12 transition-transform">✨</span>
             </>
           )}
         </button>
 
         <p className="text-[11px] text-center text-slate-500">
-          🔒 Your information is confidential. Never shared with third parties. No high-pressure sales.
+          🔒 100% Privacy Guaranteed • No pushy sales calls • Free honest Milton advice
         </p>
       </div>
     </form>

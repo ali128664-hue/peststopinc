@@ -13,18 +13,30 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
           {/* Col 1: Brand & Credentials */}
           <div className="space-y-4">
-            <div className="relative w-56 h-12 bg-white/95 p-1 rounded-lg">
+            <div className="relative w-56 h-12 bg-white/95 p-1 rounded-2xl shadow-sm">
               <Image
                 src="/images/logo.svg"
                 alt="Pest Stop Inc. Logo"
                 fill
+                sizes="224px"
                 className="object-contain p-1"
               />
             </div>
             <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
               Pest Stop Inc. is Milton’s trusted, licensed pest control and humane wildlife management specialist. Committed to eco-friendly, family-safe treatments with 100% guaranteed results.
             </p>
-            <div className="p-3 bg-white/5 rounded-xl border border-white/10 space-y-1.5 text-xs text-slate-300">
+            <div className="flex flex-wrap gap-1.5 pt-1">
+              <span className="px-2.5 py-1 rounded-full bg-white/10 text-[10px] font-bold text-emerald-300 border border-emerald-500/30">
+                🐾 Pet & Kid Safe
+              </span>
+              <span className="px-2.5 py-1 rounded-full bg-white/10 text-[10px] font-bold text-amber-300 border border-amber-500/30">
+                ⚡ Same-Day Milton
+              </span>
+              <span className="px-2.5 py-1 rounded-full bg-white/10 text-[10px] font-bold text-rose-300 border border-rose-500/30">
+                🤝 Written Warranty
+              </span>
+            </div>
+            <div className="p-3 bg-white/5 rounded-2xl border border-white/10 space-y-1 text-xs text-slate-300">
               <div className="flex items-center gap-2 text-amber-400 font-bold">
                 <Award className="w-4 h-4 shrink-0" />
                 <span>Top 3 Pest Control in Milton, ON</span>
