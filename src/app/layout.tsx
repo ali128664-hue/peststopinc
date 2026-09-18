@@ -84,6 +84,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://peststopinc.com',
   },
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'none',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -94,6 +107,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <head>
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="googlebot" content="noindex, nofollow" />
         <LocalBusinessSchema />
       </head>
       <body className="min-h-screen flex flex-col font-sans antialiased text-slate-900 bg-white">
